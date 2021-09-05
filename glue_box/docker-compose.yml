@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+    glue_box:
+        container_name: dev_box
+        build: .
+        ports: 
+            - "4040:4040"
+            - "8888:8888"
+        volumes: 
+            - ../scripts:/home/jupyter/jupyter_default_dir
+            - ~/.aws:/root/.aws
+        environment:
+            - AWS_PROFILE=<PROFILE>
